@@ -1,0 +1,30 @@
+<nav class="navbar navbar-light" style="background-color: #823db8;">
+  <div class="container">
+    <a class="navbar-brand" href="/templates">
+      <img src="{{ asset('build/images/logo.png') }}" alt="Logo" width="60" height="60">
+    </a>
+    <ul class="nav justify-content-start">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Séries</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Mes favoris</a>
+        </li>
+    </ul>
+    <form class="d-flex">
+        <input class="form-control me-2" type="Search" placeholder="Recherche" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Recherche</button>
+    </form>
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" href="/inscription">Inscription</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/connection">Connexion</a>
+        </li>
+    </ul>
+  </div>
+</nav>

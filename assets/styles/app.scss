@@ -1,5 +1,41 @@
 @import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&family=Irish+Grover&display=swap');
+
+$primary-color: #dfcceb;
+$secondary-color: #823db8;
+$primary-font-family: Irish Glover;
+$secondary-font-family: Fuzzy Bubbles;
+
 
 body {
-    background-color: blue;
+    background-color: $primary-color;
 }
+
+.nav {
+    --bs-nav-link-color: #fff;
+    --bs-nav-link-hover-color: $primary-color;    
+    font-family: $secondary-font-family;
+}
+
+.navbar > .container {
+    justify-content: space-around;
+}
+
+/* Zone recherche */
+.form-control {
+    background-color: $primary-color;
+}
+
+/* Bouton rechercher */
+.btn {
+    color: rgb(94, 94, 94);
+    background-color: $primary-color;
+}
+
+.btn-outline-success {
+    --bs-btn-hover-bg: $primary-color;
+    --bs-btn-hover-border-color: $primary-color;
+    font-family: $secondary-font-family; 
+}
+
+
