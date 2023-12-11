@@ -18,6 +18,8 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program->setCategory($this->getReference('category_Action'));
         $this->addReference('program_Walking dead', $program);
         $program->setPoster('ttt');
+        $program->setCountry('USA');
+        $program->setYear(2010);
         $manager->persist($program);
 
         $program = new Program();
@@ -26,6 +28,8 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program->setCategory($this->getReference('category_Aventure'));
         $this->addReference('program_The 100', $program);
         $program->setPoster('ttt');
+        $program->setCountry('USA');
+        $program->setYear(2014);
         $manager->persist($program);
 
         $program = new Program();
@@ -34,6 +38,8 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program->setCategory($this->getReference('category_Animation'));
         $this->addReference('program_What if...?', $program);
         $program->setPoster('ttt');
+        $program->setCountry('USA');
+        $program->setYear(2021);
         $manager->persist($program);
 
         $program = new Program();
@@ -42,6 +48,8 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program->setCategory($this->getReference('category_Fantastique'));
         $this->addReference('program_The Mandalorian', $program);
         $program->setPoster('ttt');
+        $program->setCountry('USA');
+        $program->setYear(2019);
         $manager->persist($program);
 
         $program = new Program();
@@ -50,6 +58,8 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $program->setCategory($this->getReference('category_Horreur'));
         $this->addReference('program_American Horror Story', $program);
         $program->setPoster('ttt');
+        $program->setCountry('USA');
+        $program->setYear(2011);
         $manager->persist($program);
 
         $manager->flush();

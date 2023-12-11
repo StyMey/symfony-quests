@@ -12,14 +12,32 @@ class Category
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\OneToMany(mappedBy: 'category', targetEntity: Program::class)]
-    private $programs;
 
     #[ORM\Column]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
     private ?string $name = null;
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): static
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    #[ORM\OneToMany(mappedBy: 'category', targetEntity: Program::class)]
+    private $programs;
 
     public function __construct()
     {
@@ -37,10 +55,9 @@ class Category
         $this->programs->add($program);
         $program->setCategory($this);
     }
-
     return $this;
     }
-
+    
     public function removeProgram(Program $program): self
     {
     if ($this->programs->removeElement($program)) {
@@ -49,24 +66,6 @@ class Category
             $program->setCategory(null);
         }
     }
-
     return $this;
-    }
-
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
-
-    public function setName(string $name): static
-    {
-        $this->name = $name;
-
-        return $this;
     }
 }
