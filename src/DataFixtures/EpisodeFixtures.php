@@ -13,7 +13,7 @@ class EpisodeFixtures extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager): void
     {
         $episode = new Episode();
-        $episode->setTitle('l\'exil');
+        $episode->setTitle('L\'exil');
         $episode->setNumber(1);
         $episode->setSynopsis('100 mineurs condamnés de divers crimes sont envoyés à la surface.');
         $episode->setSeason($this->getReference('season1_The 100'));

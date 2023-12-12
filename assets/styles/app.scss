@@ -35,7 +35,8 @@ body {
 .btn-outline-success {
     --bs-btn-hover-bg: $primary-color;
     --bs-btn-hover-border-color: $primary-color;
-    font-family: $secondary-font-family; 
+    font-family: $secondary-font-family;
+    --bs-btn-border-color: $primary-color;
 }
 
 

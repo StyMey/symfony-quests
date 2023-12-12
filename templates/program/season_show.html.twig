@@ -7,18 +7,15 @@ Saison {{ season.id }}
 
 {% block body %}
     <div class="media">
-        <img class="align-self-start mr-3" src="{{program.poster}}" alt="{{ program.title }} poster">
         <div class="media-body">
-            <h1 class="mt-0">{{ program.title }}</h1>
-            <p>{{ program.synopsis }}</p>
-            <p>Catégorie : {{ program.category.name }}</p>
+            <h1 class="mt-0">Saison {{ season.number }} de {{ program.title }}</h1>
+            <p>{{ season.description }}</p>
         </div>
         <h2>Episodes disponibles:</h2>
             <ul>
-            {% for episodes in seasons.episode %}
-                <li>Saison {{ season.number }}, Episode {{ episode.number }}</li>
-                <li>{{ episode.title }}</li>
-                <li>Synopsis {{ episode.synopsis }}</li>
+            {% for episode in season.episodes %}
+                <li>Episode {{ episode.number }}: {{ episode.title }}</li>
+                <li>Synopsis: {{ episode.synopsis }}</li>
             {% endfor %}
             </ul>
     </div>
