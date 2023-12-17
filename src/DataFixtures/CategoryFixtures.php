@@ -13,7 +13,7 @@ class CategoryFixtures extends Fixture
     {
         $faker = Factory::create();
 
-        for($i = 0; $i < 50; $i++) {
+        for($i = 0; $i < 5; $i++) {
             $category = new Category();
             //Ce Faker va nous permettre d'alimenter l'instance de Season que l'on souhaite ajouter en base
             $category->setName($faker->word());

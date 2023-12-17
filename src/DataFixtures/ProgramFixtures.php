@@ -16,22 +16,22 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
 
     public function load(ObjectManager $manager): void
     {
-        $category = new Category();
         $faker = Factory::create();
 
-        for($i = 0; $i < 50; $i++) {
-            $program = new Program();
-            //Ce Faker va nous permettre d'alimenter l'instance de Season que l'on souhaite ajouter en base
-            $program->setTitle($faker->title());
-            $program->setSynopsis($faker->paragraphs(3, true));
-            $program->setPoster($faker->imageUrl());
-            $program->setCountry($faker->country());
-            $program->setYear($faker->year());
-            $program->setCategory($this->getReference('category_' . $faker->numberBetween(0, 5), $i));
-            $this->addReference('program_', $program);
-            $manager->persist($program);
+        for($i = 0; $i < 5; $i++) {
+            for($p = 0; $p < 5; $p++) {
+                $program = new Program();
+                //Ce Faker va nous permettre d'alimenter l'instance de Season que l'on souhaite ajouter en base
+                $program->setTitle($faker->title());
+                $program->setSynopsis($faker->paragraphs(3, true));
+                $program->setPoster($faker->imageUrl());
+                $program->setCountry($faker->country());
+                $program->setYear($faker->year());
+                $program->setCategory($this->getReference('category_' . $faker->numberBetween(0, 5), $p));
+                $this->addReference('program_', $program);
+                $manager->persist($program);
+            }
         }
-
         $manager->flush();
     }
 

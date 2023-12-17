@@ -17,17 +17,22 @@ class EpisodeFixtures extends Fixture implements DependentFixtureInterface
     {
         $faker = Factory::create();
 
-        for($i = 0; $i < 50; $i++) {
-            $episode = new Episode();
-            //Ce Faker va nous permettre d'alimenter l'instance de Season que l'on souhaite ajouter en base
-            $episode->setNumber($faker->numberBetween(1, 10));
-            $episode->setTitle($faker->title());
-            $episode->setSynopsis($faker->paragraphs(3, true));
-            $episode->setSeason($this->getReference('program_' . $faker->numberBetween(0, 5), $i));
+        for($i = 0; $i < 5; $i++) {
+            for($p = 0; $p < 5; $p++) {
+                for($s = 0; $s < 25; $s++) {
+                    for($e = 0; $e < 50; $e++) {
+                        $episode = new Episode();
+                        //Ce Faker va nous permettre d'alimenter l'instance de Season que l'on souhaite ajouter en base
+                        $episode->setNumber($faker->numberBetween(1, 10));
+                        $episode->setTitle($faker->title());
+                        $episode->setSynopsis($faker->paragraphs(3, true));
+                        $episode->setSeason($this->getReference('program_' . $faker->numberBetween(0, 25), $e));
 
-            $manager->persist($episode);
+                        $manager->persist($episode);
+                    }
+                }
+            }
         }
-
         $manager->flush();
     }
 
