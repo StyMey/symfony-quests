@@ -19,7 +19,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         $faker = Factory::create();
 
         for($i = 0; $i < 5; $i++) {
-            for($p = 0; $p < 5; $p++) {
+            for($p = 1; $p <+ 5; $p++) {
                 $program = new Program();
                 //Ce Faker va nous permettre d'alimenter l'instance de Season que l'on souhaite ajouter en base
                 $program->setTitle($faker->title());
